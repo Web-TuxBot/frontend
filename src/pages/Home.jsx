@@ -1,11 +1,11 @@
-// src/pages/Home.js
+
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 
 const terminalLines = [
-  { command: "tuxbot как настроить nginx?", response: "🔧 sudo apt install nginx && sudo systemctl start nginx" },
-  { command: "tuxbot показать сетевые интерфейсы", response: "📡 ip addr show" },
-  { command: "tuxbot найти файлы по имени", response: "🔍 find /home -name '*.txt'" }
+  { command: "Как посмотреть рабочую директорию?", response: "🔧 Чтобы посмотреть рабочую директорию используйте pwd" },
+  { command: "Как установить docker на Manjaro OS?", response: "📡 Чтобы установить Docker на Manjaro OS используйте pacman -S docker" },
+  { command: "Как удалить директорию?", response: "🔍 Чтобы удалить директорию используйте rm -rf /путь/к/директории/" }
 ];
 
 const Home = () => {
@@ -99,8 +99,7 @@ const Home = () => {
 
   const featuresData = useMemo(() => [
     { icon: "⚡", title: "Генерация команд", description: "Автоматическая генерация bash-команд по текстовому запросу пользователя", delay: "0" },
-    { icon: "🔍", title: "Разбор команд", description: "Детальный анализ существующих команд bash-терминала", delay: "100" },
-    { icon: "🔐", title: "Авторизация", description: "Система аутентификации пользователей", delay: "200" }
+    { icon: "🔍", title: "Разбор команд", description: "Детальный анализ существующих команд bash-терминала", delay: "100" }
   ], []);
 
   return (
@@ -230,7 +229,7 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {featuresData.map((feature, index) => (
               <FeatureCard
                 key={index}
@@ -277,10 +276,6 @@ const Home = () => {
         <div className="container mx-auto px-4 sm:px-6 text-center">
           <div className={`max-w-2xl mx-auto transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-cyan-500/20 border border-cyan-500/30 mb-6 shadow-lg">
-              <span className="text-cyan-300 text-base font-semibold">🚀 Готов к работе в 2025</span>
-            </div>
-
             <h2 className="text-3xl lg:text-4xl font-black mb-6 leading-tight">
               Начните работу с <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">TuxBot</span> сегодня
             </h2>
@@ -292,7 +287,7 @@ const Home = () => {
             {/* Final CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <Link 
-                to="/register" 
+                to="/auth/register" 
                 className="bg-green-600 hover:bg-green-500 text-white font-bold px-10 py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105 text-base min-w-40 text-center"
                 style={{ transform: 'translateZ(0)' }}
               >
@@ -300,7 +295,7 @@ const Home = () => {
               </Link>
               
               <Link 
-                to="/login" 
+                to="/auth/login" 
                 className="border border-cyan-500/50 hover:border-cyan-400 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-100 hover:text-white font-bold px-10 py-4 rounded-xl transition-all duration-300 hover:scale-105 text-base min-w-40 text-center"
                 style={{ transform: 'translateZ(0)' }}
               >
@@ -312,7 +307,7 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400 text-sm">
               <div className="flex items-center justify-center space-x-3 bg-gray-800/30 rounded-lg py-3 px-4">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="font-medium">Клиент-сервер</span>
+                <span className="font-medium">Bash-терминал</span>
               </div>
               <div className="flex items-center justify-center space-x-3 bg-gray-800/30 rounded-lg py-3 px-4">
                 <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>

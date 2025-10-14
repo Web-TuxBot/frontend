@@ -254,7 +254,7 @@ export default function Header() {
             
             {/* Кнопка Войти с эффектом электрических разрядов */}
             <Link 
-              to="/login" 
+              to="/auth/login" 
               className="relative font-bold text-green-100 hover:text-green-300 transition-all duration-500 group/nav px-6 py-3 rounded-2xl hover:bg-white/5 border border-green-500/30 hover:border-green-400/50 backdrop-blur-sm"
             >
               <span className="relative z-10 flex items-center space-x-3">
@@ -284,7 +284,7 @@ export default function Header() {
             
             {/* Основная кнопка с эффектом плазмы */}
             <Link 
-              to="/register" 
+              to="/auth/register" 
               className="relative bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 hover:from-cyan-400 hover:via-blue-400 hover:to-purple-500 text-white font-extrabold px-8 py-4 rounded-2xl shadow-2xl transition-all duration-500 hover:shadow-3xl hover:scale-105 group/btn overflow-hidden border border-cyan-400/30 hover:border-cyan-300/50"
             >
               <span className="relative z-10 flex items-center space-x-3">
